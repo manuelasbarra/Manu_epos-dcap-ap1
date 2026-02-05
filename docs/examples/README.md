@@ -77,11 +77,11 @@ Full example: <a href="./full_example.ttl"><code>full_example.ttl</code></a>
 </tr>
 <tr>
         <td>PostalAddress</td> 
-        <td><a href="./postal-address.ttl"><code>postal-address.ttl</code></a></td>
+        <td><a href="./postal-address.ttl"><code>postaladdress.ttl</code></a></td>
 </tr>
 <tr>
         <td>PropertyValue</td>
-        <td><a href="./property-value.ttl"><code>property-value.ttl</code></a></td>
+        <td><a href="./property-value.ttl"><code>propertyvalue.ttl</code></a></td>
 </tr>
 <tr>
         <td>Service</td>
