@@ -12,20 +12,23 @@
 <https://www.fdsn.org/networks/NL/station/DBN> a epos:Equipment;
   # Mandatory
     # This property contains a free-text description of the Equipment.
-    dct:description "Description of Equipment" ;
+    schema:description "Description of Equipment" ;
 
     # This property contains the main identifier for the Equipment.
-    dct:identifier "https://www.fdsn.org/networks/NL/station/DBN" ;
+    schema:identifier "https://www.fdsn.org/networks/NL/station/DBN" ;
 
     # This property contains a name given to the Equipment.
-    dct:title "Title of Equipment" ;
+    schema:description "Title of Equipment" ;
 
   # Recommended
     # This property refers to an Organization responsible for manufacturing the Equipment.
-    dct:creator <PIC:000518944> ;
+    schema:manufacturer <PIC:000518944> ;
 
     # This property refers to the URI or category (skos:Concept) which describe the type of the Equipment.
     dct:type "https://orfeus-eu.org/ns/station"^^xsd:anyURI ;
+
+    # This property contains the serial number for the Equipment.
+	  schema:serialNumber "serialNumber" 
 
   # Optional
     dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
@@ -38,10 +41,9 @@
 
     # This property refers to an Equipment or a Facility in which the described Equipment is included.
     dct:isPartOf <https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5> ;
-    dcat:keyword "seismology", "seismicity", "earthquakes", "seismic station", "seismic hazard", "earth structure";
 
     # This property refers to a page or document about the Equipment.
-    dcat:landingPage "http://equipmentURL.org"^^xsd:anyURI ;
+	  foaf:page "http://equipmentURL.org"^^xsd:anyURI ;
 
     # This property describes how the instrument is oriented.
     epos:orientation "90.0/0.0"^^xsd:string ;
@@ -56,16 +58,16 @@
     epos:samplePeriod "unit and value";
 
     # This property refers to a geographical location of the Equipment.
-    # The format is: POINT(lon lat elevation). Skip elevation when the value is 0.
-    dct:spatial [ a dct:Location ;
-        dcat:centroid "POINT(5.1767 52.1017 3)"^^gsp:wktLiteral ;
-    ] ;
+  	# The format is: POINT(lon lat elevation). Skip elevation when the value is 0.
+  	dct:spatial [ a dct:Location ;
+  		locn:geometry "POINT(5.1767 52.1017 3)"^^gsp:wktLiteral ;
+  	] ;
 
     # This property refers to the temporal period of operation of the Equipment.
-    dct:temporal [ a dct:PeriodOfTime ;
-        dcat:startDate "1997-11-25T00:00:00Z"^^xsd:dateTime ;
-        dcat:endDate "2022-11-25T00:00:00Z"^^xsd:dateTime ;
-    ] ;
+  	dct:temporal [ a dct:PeriodOfTime ;
+  		schema:startDate "1997-11-25T00:00:00Z"^^xsd:dateTime ;
+  		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
+  	] ;
 
     # This property refers to a category (skos:Concept) of the Equipment. A Equipment may be associated with multiple themes.
     dcat:theme <epos:SeismicStation> ;
