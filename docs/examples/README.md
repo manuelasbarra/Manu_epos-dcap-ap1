@@ -26,10 +26,6 @@ Full example: <a href="./full_example.ttl"><code>full_example.ttl</code></a>
         <td>Contact Point</td>
         <td><a href="./contactpoint.ttl"><code>contactpoint.ttl</code></a></td>
 </tr>
-<tr> 
-        <td>Data Service</td>
-        <td><a href="./data-service.ttl"><code>data-service.ttl</code></a></td>
-</tr>
 <tr>
         <td>Dataset</td>
         <td><a href="./dataset.ttl"><code>dataset.ttl</code></a></td>
