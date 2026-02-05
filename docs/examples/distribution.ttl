@@ -28,7 +28,7 @@
     # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
 	  dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
 
-# Optional properties
+  # Optional properties
     # This property contains the size of a Distribution in bytes.
     # dcat:byteSize "1024"^^xsd:decimal ;
 
