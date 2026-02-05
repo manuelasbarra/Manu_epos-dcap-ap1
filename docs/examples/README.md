@@ -24,7 +24,7 @@ Full example: <a href="./full_example.ttl"><code>full_example.ttl</code></a>
 </tr>
 <tr>
         <td>Contact Point</td>
-        <td><a href="./contact-point.ttl"><code>contact-point.ttl</code></a></td>
+        <td><a href="./contactpoint.ttl"><code>contactpoint.ttl</code></a></td>
 </tr>
 <tr> 
         <td>Data Service</td>
