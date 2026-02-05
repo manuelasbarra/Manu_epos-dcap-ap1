@@ -15,7 +15,6 @@
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001" ;
 
   # Recommended properties
-    # - dcatap:availability
     dct:description "Description of Seismic Waveform Distribution" ;
 
     # The possible types of the file format are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
