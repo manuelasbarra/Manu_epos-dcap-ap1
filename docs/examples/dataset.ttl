@@ -55,16 +55,13 @@
     dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
 
     dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-
     dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-
     dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    owl:versionInfo "1.0.0" ;
 
     # This property refers to the type of the Dataset.
     # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
-
-    dcat:version "1.0.0" ;
 
     # This property refers to a related Dataset that is part of the described Dataset.
     # dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
@@ -73,13 +70,16 @@
         oa:hasBody "URL_of_QualityAssurance"^^xsd:anyURI  ;
         oa:hasTarget <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
     ];
-
+    
     # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
-    # dcat:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+	# dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
 
-    # This property refers to a related Dataset in which the described Dataset is physically or logically included.
-    # dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+	# This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+	# dct:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
 
-    # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
-    # dcat:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+	# This property refers to a related Dataset in which the described Dataset is physically or logically included.
+	# dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+	# This property refers to a related Dataset that is part of the described Dataset.
+	# dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
 .
