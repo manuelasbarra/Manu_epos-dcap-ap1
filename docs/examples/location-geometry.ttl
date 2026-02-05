@@ -7,7 +7,7 @@
 
 []
 
-# This property refers to a geographic region that is covered by the Dataset.
+# This property refers to a geographic region.
 dct:spatial [ a dct:Location ;
       locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
 	];
