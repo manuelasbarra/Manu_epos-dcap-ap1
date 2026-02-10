@@ -16,7 +16,7 @@
 
   # Recommended properties
     # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
-	  dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001> ;
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001> ;
     dct:description "Description of Seismic Waveform Distribution" ;
     
     # The possible types of the file format are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
