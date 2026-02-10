@@ -1,4 +1,5 @@
 @prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix http: <http://www.w3.org/2006/http#> .
 @prefix hydra: <http://www.w3.org/ns/hydra/core#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -8,7 +9,9 @@
 []
 
 hydra:property[ a hydra:IriTemplate ;
+	# Mandatory properties			  
       hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/{?starttime,endtime,network,quality}"^^xsd:string ;
+	# Optional properties 
       hydra:mapping[ a hydra:IriTemplateMapping ;
 
       # This property contains the name of the parameter as required by web service specifications
