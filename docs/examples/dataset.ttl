@@ -17,12 +17,12 @@
 []
 
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> a dcat:Dataset ;
-# Mandatory properties
+  # Mandatory properties
     dct:description "Primary Seismic Waveform Data" ;
     dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001" ;
     dct:title "Primary Seismic Waveform Data" ;
 
-# Recommended properties
+  # Recommended properties
     dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
 
     # This property links the Dataset to an available Distribution.
@@ -36,7 +36,7 @@
     # This property refers to an Organization responsible for making the Dataset available.
     dct:publisher <PIC:000518944> ;
 
-# Optional properties
+  # Optional properties
     adms:identifier [ a adms:Identifier ;
         adms:schemeAgency "DDSS-ID" ;
         skos:notation "WP08-DDSS-001" ;
