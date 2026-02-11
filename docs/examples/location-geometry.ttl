@@ -6,7 +6,17 @@
 []
 
 # This property refers to a geographic region.
+# The POLYGON format is: POLYGON((lon1 lat1, lon2 lat2,...))
+
 dct:spatial [ a dct:Location ;
       locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
 	];
+.
+
+[]
+#  This property refers to a point.
+#  The POINT format is: POINT(lon lat elevation). Skip elevation when the value is 0.
+dct:spatial [ a dct:Location ;
+		locn:geometry "POINT(5.1767 52.1017 3)"^^gsp:wktLiteral ;
+	] ;
 .
