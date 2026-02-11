@@ -140,16 +140,12 @@
 
 # Dataset
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> a dcat:Dataset ;
-####
 # Mandatory properties
-####
 	dct:description "Description of Primary Seismic Waveform Data" ;
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001" ;
 	dct:title "Primary Seismic Waveform Data" ;
 
-####
 # Recommended properties
-####
 	dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
 	# This property links the Dataset to an available Distribution.
 	dcat:distribution <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> ;
@@ -162,9 +158,7 @@
 	# This property refers to an Organisation responsible for making the Dataset available.
 	dct:publisher <PIC:000518944> ;
 
-####
 # Optional properties
-####
 	adms:identifier [ a adms:Identifier ;
 			adms:schemeAgency "DDSS-ID" ;
 			skos:notation "WP08-DDSS-001" ;
@@ -176,7 +170,7 @@
 
 	 # This property refers to information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. 
     # Example of accessRights using a controlled vocabularyt: https://publications.europa.eu/resource/authority/access-right
-    dct:accessRights "https://publications.europa.eu/resource/authority/access-right/PUBLIC"
+    dct:accessRights "https://publications.europa.eu/resource/authority/access-right/PUBLIC" ;
 
 	# This property refers to the frequency at which the Dataset is updated.
 	# The possible types are here: http://purl.org/cld/freq/
@@ -230,53 +224,43 @@
 
 # Distribution
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001> a dcat:Distribution ;
-####
 # Mandatory properties
-####
-	# This property dcat:accessURL contains url of  DataService ->endpoinURL
-	dcat:accessURL "http://www.orfeus-eu.org/fdsnws/dataselect/1/query"^^xsd:anyURI ;
+	## This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+    # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+    dcat:accessURL <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001> ;
 
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001/Distribution/001" ;
-####
-# Recommended properties
-####
-	# - dcatap:availability
-	dct:description "Description of Seismic Waveform Distribution" ;
 
+# Recommended properties
+    # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001> ;
+	dct:description "Description of Seismic Waveform Distribution" ;
 
 	# This property refers to the file format of the Distribution.
 	# The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
 	dct:format "http://publications.europa.eu/resource/authority/file-type/BIN"^^xsd:anyURI ;
 
-	# This property refers to the licence under which the Distribution is made available.
-	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-####
-# Optional properties
-####
-	# - adms:status
+    # This property refers to the type of the Distribution. The possible types are
+    # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+    # OR
+    # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+	dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
 
-	# conformsTo --> accessService
-	dcat:accessService <https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001> ;
+# Optional properties
+	# - adms:status
 
 	# This property contains the size of a Distribution in bytes.
 	# dcat:byteSize "1024"^^xsd:decimal ;
 
-	# - dcat:compressFormat
-
 	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
 	# dcat:downloadURL "Direct_link_to_downloadable_file"^^xsd:anyURI ;
-
-	# - dcat:mediaType
-	# - dcat:packageFormat
-	# - dcat:spatialResolutionInMeters
-	# - dcat:temporalResolution
-
-	# This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a dataset conforms to. This is (generally) a complementary concern to the media-type or format.
-	dct:conformsTo "http://www.fdsn.org/pdf/SEEDManual_V2.4.pdf"^^xsd:anyURI ;
 
 	dct:issued "2017-01-01"^^xsd:date ;
 
 	# - dct:language
+
+	# This property refers to the licence under which the Distribution is made available.
+	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 
 	dct:modified "2017-01-01"^^xsd:date ;
 
@@ -285,79 +269,59 @@
 	dct:title "Title of Seismic Waveform Distribution" ;
 
 	# - foaf:page
-	# - odrl:hasPolicy
 	# - spdx:checksum
 .
 
-# DataService
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001> a dcat:DataService ;
-####
+# WebService
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001> a epos:WebService ;
 # Mandatory properties
-####
+    schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001" ;
 
-	#hydra:entrypoint -->dcat:endpointURL
-	dcat:endpointURL "http://www.orfeus-eu.org/fdsnws/dataselect/1/query"^^xsd:anyURI ;
-
-	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001" ;
-	#name -->title
-	dct:title "Title of Seismic Waveform Data Selvice" ;
-
-####
 # Recommended properties
-####
 	# This property contains contact information that can be used for sending comments about the Web Service.
 	dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
 
-	# This property refers to a web service operation supported by the Web Service.
-	#hydra:supportedOperation -->  dcat:endpointDescription
-	dcat:endpointDescription <https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001/Operation/001> ;
-
-	dcat:servesDataset <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
-
 	#This property refers to a category of the Web Service. A Web Service may be associated with multiple themes.
 	dcat:theme  <epos:SeismicWaveform> ;
+    # This property refers to the API definitions (e.g., WSDL, WADL)
+    hydra:entrypoint "http://www.orfeus-eu.org/fdsnws/dataselect/1/application.wadl"^^xsd:anyURI ;
 
-	dct:description "FDSN Standard webservice to download waveform data" ;
+    schema:dateModified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+    schema:datePublished "2016-01-01T00:00:00Z"^^xsd:dateTime ;
 
-	#schema:datePublished -->dct:issued
-	dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-
-	#schema:dateModified -->dct:modified
-	dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+	schema:description "FDSN Standard webservice to download waveform data" ;
+	schema:name "FDSN Standard webservice to download waveform data" ;
 
 	# This property refers to an Organisation responsible for making the Web Service available.
-	#dct:publisher-->schema:provider
-	dct:publisher <PIC:000518944> ;
+	schema:provider <PIC:000518944> ;
 
-####
 # Optional properties
-####
-	dcat:keyword "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
-
-	# - dct:accessRight
-
-	# This property refers to the Service API definition. (Optional)
-	dct:conformsTo "https://www.orfeus-eu.org/data/eida/webservices/dataselect/"^^xsd:anyURI ;
+	# This property refers to the API documentation. (Optional)
+	dct:conformsTo <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/APIDocumentation> ;
 
 	# This property refers to the licence under which the Distribution is made available.
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 
 	# This property refers to a geographic region that is covered by the Dataset.
 	# The POLYGON format is: POLYGON((lon1 lat1, lon2 lat2,...))
-		dct:spatial [ a dct:Location ;
-		dcat:bbox "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
 	];
+
+    # This property refers to a web service operation supported by the Web Service.
+    hydra:supportedOperation <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001> ;
 
 	# This property refers to a temporal period that the Dataset covers.
 	dct:temporal [ a dct:PeriodOfTime ;
-		dcat:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
-		dcat:endDate "2022-01-01T00:00:00Z"^^xsd:dateTime ;
+		schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+		#schema:endDate "YYYY-MM-DDThh:mm:ssZ"^^xsd:dateTime ;
 	] ;
+
+    schema:keywords "seismology", "seismicity", "earthquakes", "waveform", "seismic hazard", "earth structure", "earthquake intensity", "macroseismic", "macroseismic information", "waveform modeling", "Dataselect", "FDSN-WS", "Seismic Waveform", "EIDA" ;
 .
 
 # Operation
-<https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/001/Operation/001> a hydra:Operation;
-
+<https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/001/Operation/001> a hydra:Operation;
 # Optional properties
 	hydra:method "GET";
 
@@ -367,11 +331,11 @@
 	hydra:returns "application/vnd.fdsn.mseed" ;
 
 	hydra:property[ a hydra:IriTemplate ;
-		# Mandatory properties
+		# Mandatory properties IriTemplate
 		hydra:template "http://www.orfeus-eu.org/fdsnws/dataselect/1/query/{?starttime,endtime,network,quality}"^^xsd:string ;
-		# Optional properties
+		# Optional properties IriTemplate
 		hydra:mapping[ a hydra:IriTemplateMapping ;
-			# Mandatory properties #
+			# Mandatory properties IriTemplateMapping
 			# This property contains the name of the parameter as required by web service specifications
 			hydra:variable "starttime"^^xsd:string ;
 
@@ -460,61 +424,73 @@
 
 # SoftwareSourceCode
 <SoftwareSourceCodeId> a schema:SoftwareSourceCode;
+# Mandatory properties
 	schema:identifier "SoftwareSourceCodeId" ;
-	schema:name "Python library for EPOS-RDF conversion" ;
-	schema:description "Python library for EPOS-RDF conversion" ;
-
+	
+# Recommended properties
 	# This property contains contact information that can be used for sending comments about the software.
 	schema:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+    schema:name "Python library for EPOS-RDF conversion" ;
+
+# Optional properties
+    dcat:theme <epos:SeismicWaveform> ;
 
 	# Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
 	schema:codeRepository "https://github.com/softwaresourcecode"^^xsd:anyURI ;
 
+    schema:description "Python library for EPOS-RDF conversion" ;
+    schema:keywords "keyword1", "keyword2", "keyword3" ;
+
 	# This property refers to the licence under which the software is made available.
 	schema:license "https://github.com/softwaresourcecode/blob/master/LICENSE"^^xsd:anyURI ;
 
-	# This property refers to the version of the software.
-	schema:softwareVersion "1.0";
+    # This property refers to the web page URL which describes the software.
+	schema:mainEntityOfPage "web_page_URL"^^xsd:anyURI ;
 
 	# The computer programming language.
 	schema:programmingLanguage "Python";
 
-	# This property refers to the web page URL which describes the software.
-	schema:mainEntityOfPage "web_page_URL"^^xsd:anyURI ;
+	# This property refers to the version of the software.
+	schema:softwareVersion "1.0";
 
-	schema:keywords "keyword1", "keyword2", "keyword3" ;
-	dcat:theme <epos:SeismicWaveform> ;
 .
+
 # SoftwareApplication
-<softwareID> a schema:SoftwareApplication;
+<SoftwareApplicationId> a schema:SoftwareApplication;
+# Mandatory properties
 	# This property contains one or more identifier for the software
-	schema:identifier "softwareID" ;
+	schema:identifier "SoftwareApplicationId" ;
 
 	schema:identifier [ a schema:PropertyValue ;
 		schema:propertyID  "DDSS-ID" ;
 		schema:value "WP8-DDSS-XXX" ;
 	];
-	schema:name "name of the software" ;
-	schema:description "description of the software" ;
 
-	# This property contains contact information that can be used for sending comments about the software.
+# Recommended properties
+    # This property contains contact information that can be used for sending comments about the software.
 	schema:contactPoint  <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
+
+	schema:name "name of the software" ;
+
+# Optional properties	
+    dcat:theme <epos:SeismicWaveform> ;
+    schema:description "description of the software" ;
 
 	# This property refers to the URL to download the software.
 	schema:downloadUrl "URL"^^xsd:anyURI ;
 
+    schema:keywords "keyword1", "keyword2", "keyword3" ;
+
 	# This property refers to the licence under which the software is made available.
 	schema:license "https://www.gnu.org/licenses/gpl.html"^^xsd:anyURI ;
-
-	# This property refers to the version of the software.
-	schema:softwareVersion "1.1";
 
 	# This property refers to the web page URL which describes the software.
 	schema:mainEntityOfPage "web_page_URL"^^xsd:anyURI ;
 
-	schema:keywords "keyword1", "keyword2", "keyword3" ;
-	dcat:theme <epos:SeismicWaveform> ;
+    # This property refers to the version of the software.
+	schema:softwareVersion "1.1";
 .
+
 # Facility
 <https://doi.org/10.21944/e970fd34-23b9-3411-b366-e4f72877d2c5> a epos:Facility ;
 
@@ -717,11 +693,6 @@
 
 	# This property refers to a related Dataset that is part of the described Dataset.
 	# dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-    dqv:hasQualityAnnotation [ a oa:Annotation ;
-		oa:hasBody "URL_of_QualityAssurance"^^xsd:anyURI  ;
-		oa:hasTarget <https://www.epos-eu.org/epos-dcat-ap/Seismology/002/ODC> ;
-	];
 
 	# This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
 	# dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
