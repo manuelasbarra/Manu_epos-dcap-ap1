@@ -24,7 +24,7 @@ hydra:mapping[ a hydra:IriTemplateMapping ;
 	  # The possible values for this property are: "xsd:string" "xsd:boolean" "xsd:date" " xsd:dateTime" "xsd:decimal" "xsd:double" "xsd:float" "xsd:int" "xsd:integer" "xsd:long";
 	  rdfs:range "xsd:dateTime" ;
 
-     # Recommended
+    # Recommended
 	  # This property contains the default value of the parameter
 	  schema:defaultValue "2012-01-01T00:00:00" ;
 	  
