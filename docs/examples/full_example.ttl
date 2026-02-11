@@ -1,42 +1,33 @@
 @prefix : <https://www.epos-eu.org/epos-dcat-ap#> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
-@prefix cnt: <http://www.w3.org/2011/content#> .
-@prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcatap: <http://data.europa.eu/r5r> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 @prefix http: <http://www.w3.org/2006/http#> .
 @prefix hydra: <http://www.w3.org/ns/hydra/core#> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
-@prefix oa: <http://www.w3.org/ns/oa#> .
-@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
-@prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
-@prefix time: <http://www.w3.org/2006/time#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Person
 <http://orcid.org/0000-0001-7750-0000> a schema:Person ;
 	schema:identifier [ a schema:PropertyValue ;
-	schema:propertyID  "orcid" ;
-	schema:value   "0000-0001-7750-0000" ;
+		schema:propertyID  "orcid" ;
+		schema:value   "0000-0001-7750-0000" ;
 	];
 	schema:identifier [ a schema:PropertyValue ;
-	schema:propertyID  "ScopusAuthorID" ;
-	schema:value   "5500056000" ;
+		schema:propertyID  "ScopusAuthorID" ;
+		schema:value   "5500056000" ;
 	];
 	schema:familyName "Surname1" ;
 	schema:givenName "Name1" ;
@@ -75,6 +66,7 @@
 	schema:contactType "scientificContact" ;
 .
 
+# Person
 <http://orcid.org/0000-0002-6250-0000> a schema:Person ;
 	schema:identifier "http://orcid.org/0000-0002-6250-0000" ;
 	schema:familyName "Surname2" ;
@@ -93,18 +85,20 @@
 	schema:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
 .
 
+# ContactPoint
 <http://orcid.org/0000-0002-6250-0000/contactPoint> a schema:ContactPoint ;
 	schema:email "test2@knmi@nl" ;
 	schema:availableLanguage "en" ;
 	schema:contactType "manager";
 .
 
+# Organization
 <PIC:000518944> a schema:Organization ;
 	schema:identifier [ a schema:PropertyValue ;
 		schema:propertyID "PIC" ;
 		schema:value "000518944" ;
 	];
-	schema:legalName "Institute test1" ;
+	schema:legalName "Institute Name" ;
 	schema:leiCode "Legal Entity Identifier Search" ;
 	schema:address [ a schema:PostalAddress ;
 		schema:streetAddress "address, 002" ;
@@ -112,9 +106,9 @@
 		schema:postalCode "00143" ;
 		schema:addressCountry "Italy" ;
 	];
-	schema:logo "http://www.test.it/logo.png"^^xsd:anyURI ;
-	schema:url "http://www.test.it"^^xsd:anyURI  ;
-	schema:email "test1_institute@email.it" ;
+	schema:logo "http://www.institute.it/logo.png"^^xsd:anyURI ;
+	schema:url "http://www.institute.it"^^xsd:anyURI  ;
+	schema:email "institute@email.it" ;
 	schema:telephone "+0302206911" ;
 	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/legalContact> ;
 	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/scientificContact> ;
@@ -122,12 +116,13 @@
 	schema:memberOf <PIC:007012076> ;
 .
 
+# Organization 
 <PIC:007012076> a schema:Organization ;
 	schema:identifier [ a schema:PropertyValue ;
 		schema:propertyID  "PIC" ;
 		schema:value   "007012076" ;
 	];
-	schema:legalName "Institute test1" ;
+	schema:legalName "Institute Name 2" ;
 	schema:leiCode "Legal Entity Identifier Search" ;
 	schema:address [ a schema:PostalAddress ;
 		schema:streetAddress "address, 002" ;
@@ -135,8 +130,8 @@
 		schema:postalCode "00143" ;
 		schema:addressCountry "Italy" ;
 	];
-	schema:url "http://www.test2.it/"^^xsd:anyURI ;
-	schema:email "test2_example@email.it" ;
+	schema:url "http://www.institute2.it/"^^xsd:anyURI ;
+	schema:email "institute2@email.it" ;
 	schema:telephone "+0302206922" ;
 	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/legalContact> ;
 	schema:contactPoint <http://orcid.org/0000-0001-7750-0000/scientificContact> ;
@@ -148,7 +143,7 @@
 ####
 # Mandatory properties
 ####
-	dct:description "Primary Seismic Waveform Data" ;
+	dct:description "Description of Primary Seismic Waveform Data" ;
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001" ;
 	dct:title "Primary Seismic Waveform Data" ;
 
@@ -167,17 +162,6 @@
 	# This property refers to an Organisation responsible for making the Dataset available.
 	dct:publisher <PIC:000518944> ;
 
-	# This property refers to a geographic region that is covered by the Dataset.
-	dct:spatial [ a dct:Location ;
-			dcat:bbox "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
-	];
-
-	# This property refers to a temporal period that the Dataset covers.
-	dct:temporal [ a dct:PeriodOfTime ;
-		dcat:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
-		dcat:endDate "2022-01-01T00:00:00Z"^^xsd:dateTime ;
-	] ;
-
 ####
 # Optional properties
 ####
@@ -189,10 +173,10 @@
 	# - adms:sample
 	# - adms:versionNotes
 	# - dcat:landingPage
-	# - dcat:qualifiedRelation
-	# - dcat:spatialResolutionInMeters
-	# - dcat:temporalResolution
-	# - dct:accessRights
+
+	 # This property refers to information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. 
+    # Example of accessRights using a controlled vocabularyt: https://publications.europa.eu/resource/authority/access-right
+    dct:accessRights "https://publications.europa.eu/resource/authority/access-right/PUBLIC"
 
 	# This property refers to the frequency at which the Dataset is updated.
 	# The possible types are here: http://purl.org/cld/freq/
@@ -202,15 +186,9 @@
 
 	dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
 
-	# - dct:creator
-
 	# This property refers to a related Dataset that is part of the described Dataset.
 	# dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-	dqv:hasQualityAnnotation [ a oa:Annotation ;
-		oa:hasBody "URL_of_QualityAssurance"^^xsd:anyURI  ;
-		oa:hasTarget <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/001> ;
-	];
+	
 	# This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
 	# dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
 
@@ -219,8 +197,6 @@
 
 	# This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
 	# dct:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-	# - dct:isReferencedBy
 
 	dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
 
@@ -232,6 +208,16 @@
 	# - dct:relation
 	# - dct:source
 
+    # This property refers to a geographic region that is covered by the Dataset.
+	dct:spatial [ a dct:Location ;
+		locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
+	];
+
+	# This property refers to a temporal period that the Dataset covers.
+	dct:temporal [ a dct:PeriodOfTime ;
+		schema:startDate "1988-01-01T00:00:00Z"^^xsd:dateTime ;
+		schema:endDate "1990-01-01T00:00:00Z"^^xsd:dateTime ;
+	] ;
 
 	# This property refers to the type of the Dataset.
 	# Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
@@ -240,9 +226,6 @@
 	# - foaf:page
 
 	owl:versionInfo "1.0.0" ;
-
-	# - prov:qualifiedAttribution
-	# - prov:wasGeneratedBy
 .
 
 # Distribution
