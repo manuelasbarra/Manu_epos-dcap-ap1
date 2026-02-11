@@ -7,9 +7,9 @@
 []
 
 schema:address [ a schema:PostalAddress ;
-                    schema:streetAddress "address, 002" ;
-                    schema:addressLocality "Rome" ;
-                    schema:postalCode "00143" ;
-                    schema:addressCountry "Italy" ;
-	              ];
+		schema:streetAddress "address, 002" ;
+		schema:addressLocality "Rome" ;
+		schema:postalCode "00143" ;
+		schema:addressCountry "Italy" ;
+];
 .
