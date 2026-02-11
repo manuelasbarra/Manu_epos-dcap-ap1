@@ -170,7 +170,7 @@
 
 	 # This property refers to information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. 
     # Example of accessRights using a controlled vocabularyt: https://publications.europa.eu/resource/authority/access-right
-    dct:accessRights "https://publications.europa.eu/resource/authority/access-right/PUBLIC" ;
+    dct:accessRights "https://publications.europa.eu/resource/authority/access-right/PUBLIC"^^xsd:anyURI ;
 
 	# This property refers to the frequency at which the Dataset is updated.
 	# The possible types are here: http://purl.org/cld/freq/
