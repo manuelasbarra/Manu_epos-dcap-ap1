@@ -563,7 +563,7 @@
 	schema:manufacturer <PIC:000518944> ;
 
     # This property contains the serial number for the Equipment.
-	schema:serialNumber "serialNumber" 
+	schema:serialNumber "serialNumber" ;
 
   # Optional properties
 	dcat:contactPoint <http://orcid.org/0000-0002-6250-0000/contactPoint> ;
@@ -608,10 +608,10 @@
 .
 
 # Service
-<https://www.epos-eu.org/epos-dcat-ap/Service/001> a schema:Service.
+<https://www.epos-eu.org/epos-dcat-ap/Service/001> a schema:Service ;
   # Mandatory properties
 	# This property contains the main identifier for the Service.
-	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Service/001";
+	schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Service/001" ;
 
   # Recommended properties
 	# This property refers to the Contact Point defined for the Service.
@@ -728,7 +728,7 @@
 	#hydra:entrypoint -->dcat:endpointURL
 	dcat:endpointURL "https://www.orfeus-eu.org/fdsnws/station/1/query"^^xsd:anyURI ;
 	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/002/ODC" ;
-	chema:name  "FDSN Station Web Service" ;
+	schema:name  "FDSN Station Web Service" ;
 
 # Recommended properties
 	# This property contains contact information that can be used for sending comments about the Web Service.
