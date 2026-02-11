@@ -37,6 +37,37 @@
     # This property refers to an Organization responsible for making the Dataset available.
     dct:publisher <PIC:000518944> ;
 
+# Optional properties
+    adms:identifier [ a adms:Identifier ;
+        adms:schemeAgency "DDSS-ID" ;
+        skos:notation "WP08-DDSS-001" ;
+    ];
+    # This property refers to information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. 
+    # Example of accessRights using a controlled vocabularyt: https://publications.europa.eu/resource/authority/access-right
+    dct:accessRights "https://publications.europa.eu/resource/authority/access-right/PUBLIC"
+
+    # This property refers to the frequency at which the Dataset is updated.
+    # The possible types are here: http://purl.org/cld/freq/
+    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
+
+    dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+    # This property refers to a related Dataset that is part of the described Dataset.
+	# dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+    # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+	# dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+    # This property refers to a related Dataset in which the described Dataset is physically or logically included.
+	# dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+    dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
+    # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
+	# dct:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+
+    dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
+
     # This property refers to a geographic region that is covered by the Dataset.
     dct:spatial [ a dct:Location ;
       locn:geometry "POLYGON((180.0 -90.0, -180.0 -90.0, -180.0 90.0, 180.0 90.0, 180.0 -90.0))"^^gsp:wktLiteral ;
@@ -48,34 +79,9 @@
 		schema:endDate "1990-01-01T00:00:00Z"^^xsd:dateTime ;
 	] ;
 
-# Optional properties
-    adms:identifier [ a adms:Identifier ;
-        adms:schemeAgency "DDSS-ID" ;
-        skos:notation "WP08-DDSS-001" ;
-    ];
-
-    # This property refers to the frequency at which the Dataset is updated.
-    # The possible types are here: http://purl.org/cld/freq/
-    dct:accrualPeriodicity "http://purl.org/cld/freq/continuous"^^xsd:anyURI ;
-
-    dct:created "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-    dct:issued "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-    dct:modified "2016-01-01T00:00:00Z"^^xsd:dateTime ;
-    owl:versionInfo "1.0.0" ;
-
     # This property refers to the type of the Dataset.
     # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
     dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
 
-    # This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
-	# dct:hasVersion <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-	# This property refers to a related Dataset of which the described Dataset is a version, edition, or adaptation.
-	# dct:isVersionOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-	# This property refers to a related Dataset in which the described Dataset is physically or logically included.
-	# dct:isPartOf <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
-
-	# This property refers to a related Dataset that is part of the described Dataset.
-	# dct:hasPart <https://www.epos-eu.org/epos-dcat-ap/Seismology/Dataset/otherDataset> ;
+    owl:versionInfo "1.0.0" ;
 .
