@@ -712,8 +712,6 @@
   # Optional properties
 	# If the type of Distribution is DOWNLOADABLE FILE, this property contains a URL that is a direct link to a downloadable file in a given format. Otherwise, this property is optional.
 	# dcat:downloadURL "Direct_link_to_downloadable_file"^^xsd:anyURI ;
-	# This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a dataset conforms to. This is (generally) a complementary concern to the media-type or format.
-	dct:conformsTo "https://www.fdsn.org/xml/station/fdsn-station-1.1.xsd"^^xsd:anyURI ;
 	dct:issued "2017-01-01"^^xsd:date ;
     # This property refers to the licence under which the Distribution is made available.
 	dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
@@ -725,10 +723,6 @@
 <https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/ODC> a epos:WebService;
   # Mandatory properties
     schema:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/WebService/002/ODC" ;
-	#hydra:entrypoint -->dcat:endpointURL
-	dcat:endpointURL "https://www.orfeus-eu.org/fdsnws/station/1/query"^^xsd:anyURI ;
-	dct:identifier "https://www.epos-eu.org/epos-dcat-ap/Seismology/DataService/002/ODC" ;
-	schema:name  "FDSN Station Web Service" ;
 
 # Recommended properties
 	# This property contains contact information that can be used for sending comments about the Web Service.
