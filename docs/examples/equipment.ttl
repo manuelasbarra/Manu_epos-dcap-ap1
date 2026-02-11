@@ -11,6 +11,7 @@
 []
 
 <https://www.fdsn.org/networks/NL/station/DBN> a epos:Equipment;
+
   # Mandatory
     # This property contains a free-text description of the Equipment.
     schema:description "Description of Equipment" ;
